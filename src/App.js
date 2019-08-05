@@ -1,10 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
+//import components
+import Products from './component/Products';
+import AddProduct from './component/AddProduct';
+import EditProduct from './component/EditProduct';
 
 
 function App() {
+  
   return (
     <div className="App">
-      <h1>Hola</h1>
+         <Router>
+            <Switch>
+
+            </Switch>
+         </Router>
     </div>
   );
 }
