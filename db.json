@@ -3,13 +3,13 @@
       {
           "priceSaucer" : "200",
           "nameSaucer" : "Napolitana",
-          "categorie" : "Postre",
+          "category" : "Postre",
           "id" : 1
       },
       {
           "priceSaucer" : "400",
           "nameSaucer" : "Asado 2 platos",
-          "categorie" : "Carnes",
+          "category" : "Carnes",
           "id" : 2
       }
   ]

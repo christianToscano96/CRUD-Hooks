@@ -9,6 +9,7 @@ function Products({products}) {
           <ul className="list-group mt-5">
               {products.map(product => (
                 <ProductsList 
+                    key={product.id}
                     product={product}
                 />
               ))}

@@ -39,7 +39,7 @@ function App() {
                   <Route exact path="/products" 
                          render={() => (
                             <Products
-                              productos={products} 
+                              products={products} 
                             />
                          )}
                    />
