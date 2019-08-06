@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import ProductsList from './ProductsList';
 
 function Products({products}) {
     return(
-        <h1 className="text-center">Productos</h1>
+        <Fragment>
+          <h1 className="text-center">Productos</h1>
+
+          <ul className="list-group mt-5">
+              {products.map(product => (
+                <ProductsList 
+                    product={product}
+                />
+              ))}
+          </ul>  
+        </Fragment>
     )
 }
 
