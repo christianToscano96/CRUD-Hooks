@@ -1,0 +1,16 @@
+{
+  "restaurant" : [
+      {
+          "priceSaucer" : "200",
+          "nameSaucer" : "Napolitana",
+          "categorie" : "Postre",
+          "id" : 1
+      },
+      {
+          "priceSaucer" : "400",
+          "nameSaucer" : "Asado 2 platos",
+          "categorie" : "Carnes",
+          "id" : 2
+      }
+  ]
+}
