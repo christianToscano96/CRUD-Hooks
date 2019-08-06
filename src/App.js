@@ -6,6 +6,7 @@ import Products from './component/Products';
 import AddProduct from './component/AddProduct';
 import EditProduct from './component/EditProduct';
 import Product from './component/Product';
+import Header from './component/Header/Header';
 
 
 function App() {
@@ -13,12 +14,16 @@ function App() {
   return (
     <div className="App">
          <Router>
-            <Switch>
-                <Route exact path="/new-product/new" component={AddProduct} />
-                <Route exact path="/new-product" component={AddProduct} />
-                <Route exact path="/products" component={Products} />
-                <Route exact path="/products/edit/:id" component={EditProduct} />
-            </Switch>
+            <Header/>
+            <main className="container mt-5">
+              <Switch>
+                  <Route exact path="/product/new" component={AddProduct} />
+                  <Route exact path="/products" component={Products} />
+                  <Route exact path="/products/:id" component={Product} />
+                  <Route exact path="/products/edit/:id" component={EditProduct} />
+              </Switch>
+            </main>
+            <p className="mt-4 p2 text-center">Todos los Derechos Reservados</p>
          </Router>
     </div>
   );
