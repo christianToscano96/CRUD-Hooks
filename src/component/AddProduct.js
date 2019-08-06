@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Error from '../component/error/Error';
+import axios from 'axios';
 
 function AddProduct() {
 
@@ -6,18 +8,37 @@ function AddProduct() {
     const [ nameSaucer, getNameSaucer ] = useState('');
     const [ priceSaucer, getPriceSaucer ] = useState('');
     const [ category, getCategory ] = useState('');
+    //validacion
+    const [error, getError ] = useState(false);
 
     //para leer los radios
     const readRadioValue = e => {
         getCategory(e.target.value);
+    }
+
+    //envio de datos del formulario
+    const addProduct = e => {
+        e.preventDefault();
+
+        if(nameSaucer === '' || priceSaucer === '' || category === '') {
+            getError(true);
+            return;
+        }
+        getError(false);
+
+        //create the new product
+
     }
     return(
         <div classsName="col-md-8 mx-auto">
             <h1 className="text-center">Agregar Nuevo Producto</h1>
             <hr></hr>
 
+            {(error) ? <Error message="Todos los campos son obligatorios"/> : null}
+
             <form 
                 className="mt-5 p-2 shadow rounded"
+                onSubmit={addProduct}
             >
                 <div className="form-group p-2 pt-2 ">
                     <label>Nombre del Platillo</label>
