@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function AddProduct() {
+
+    //state 
+    const [ nameSaucer, getNameSaucer ] = useState('');
+    const [ priceSaucer, getPriceSaucer ] = useState('');
+    const [ category, getCategory ] = useState('');
+
+    //para leer los radios
+    const readRadioValue = e => {
+        getCategory(e.target.value);
+    }
     return(
         <div classsName="col-md-8 mx-auto">
             <h1 className="text-center">Agregar Nuevo Producto</h1>
@@ -16,15 +26,17 @@ function AddProduct() {
                         className="form-control"
                         name="name"
                         placeholder="Nombre Platillo"
+                        onChange={e => getNameSaucer(e.target.value)}
                     />
                 </div>
                 <div className="form-group  pt-2">
-                    <label>Nombre del Platillo</label>
+                    <label>Precio del Platillo</label>
                     <input
                         type="number"
                         className="form-control"
                         name="price"
                         placeholder="Precio del Platillo"
+                        onChange={e => getPriceSaucer(e.target.value)}
                     />
                 </div>
 
@@ -36,6 +48,7 @@ function AddProduct() {
                             type="radio"
                             name="category"
                             value="postre"
+                            onChange={readRadioValue}
                         />
                         <lebel className="form-check-label">
                             Postre
@@ -47,6 +60,7 @@ function AddProduct() {
                             type="radio"
                             name="category"
                             value="bebida"
+                            onChange={readRadioValue}
                         />
                         <lebel className="form-check-label">
                             Bebida
@@ -58,6 +72,7 @@ function AddProduct() {
                             type="radio"
                             name="category"
                             value="cortes"
+                            onChange={readRadioValue}
                         />
                         <lebel className="form-check-label">
                             Cortes
@@ -69,6 +84,7 @@ function AddProduct() {
                             type="radio"
                             name="category"
                             value="ensalada"
+                            onChange={readRadioValue}
                         />
                         <lebel className="form-check-label">
                             Ensalada
