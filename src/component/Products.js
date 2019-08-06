@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Products() {
+function Products({products}) {
     return(
         <h1 className="text-center">Productos</h1>
     )
