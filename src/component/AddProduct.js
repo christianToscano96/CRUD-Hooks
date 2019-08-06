@@ -17,7 +17,7 @@ function AddProduct() {
     }
 
     //envio de datos del formulario
-    const addProduct = e => {
+    const addProduct = async e => {
         e.preventDefault();
 
         if(nameSaucer === '' || priceSaucer === '' || category === '') {
@@ -27,10 +27,20 @@ function AddProduct() {
         getError(false);
 
         //create the new product
+        try {
+            const result = await axios.post('http://localhost:4000/restaurant', {
+                nameSaucer,
+                priceSaucer,
+                category
+            });
+            console.log(result);
+        } catch (error) {
+            console.log(error);
+        }
 
     }
     return(
-        <div classsName="col-md-8 mx-auto">
+        <div className="col-md-8 mx-auto">
             <h1 className="text-center">Agregar Nuevo Producto</h1>
             <hr></hr>
 
@@ -61,7 +71,7 @@ function AddProduct() {
                     />
                 </div>
 
-                <legen className="text-center p-2 pt-2">Categoría</legen>
+                <legend className="text-center p-2 pt-2">Categoría</legend>
                 <div className="text-center py-2 shadow  pt-2 rounded">
                     <div className="form-check form-check-inline">
                         <input
@@ -71,9 +81,9 @@ function AddProduct() {
                             value="postre"
                             onChange={readRadioValue}
                         />
-                        <lebel className="form-check-label">
+                        <label className="form-check-label">
                             Postre
-                        </lebel>
+                        </label>
                     </div>
                     <div className="form-check form-check-inline">
                         <input
@@ -83,9 +93,9 @@ function AddProduct() {
                             value="bebida"
                             onChange={readRadioValue}
                         />
-                        <lebel className="form-check-label">
+                        <label className="form-check-label">
                             Bebida
-                        </lebel>
+                        </label>
                     </div>
                     <div className="form-check form-check-inline">
                         <input
@@ -95,9 +105,9 @@ function AddProduct() {
                             value="cortes"
                             onChange={readRadioValue}
                         />
-                        <lebel className="form-check-label">
+                        <label className="form-check-label">
                             Cortes
-                        </lebel>
+                        </label>
                     </div>
                     <div className="form-check form-check-inline">
                         <input
@@ -107,9 +117,9 @@ function AddProduct() {
                             value="ensalada"
                             onChange={readRadioValue}
                         />
-                        <lebel className="form-check-label">
+                        <label className="form-check-label">
                             Ensalada
-                        </lebel>
+                        </label>
                     </div>
                 </div>
 
