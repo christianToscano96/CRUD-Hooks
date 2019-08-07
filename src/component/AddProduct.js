@@ -66,32 +66,32 @@ function AddProduct({history, getUpdateProducts}) {
             {(error) ? <Error message="Todos los campos son obligatorios"/> : null}
 
             <form 
-                className="mt-5 p-2 shadow rounded"
+                className="mt-5 px-5 py-2 shadow rounded"
                 onSubmit={addProduct}
             >
-                <div className="form-group p-2 pt-2 ">
+                <div className="form-group pt-2 ">
                     <label>Nombre del Platillo</label>
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-control rounded"
                         name="name"
                         placeholder="Nombre Platillo"
                         onChange={e => getNameSaucer(e.target.value)}
                     />
                 </div>
-                <div className="form-group  pt-2">
+                <div className="form-group pt-2">
                     <label>Precio del Platillo</label>
                     <input
                         type="number"
-                        className="form-control"
+                        className="form-control rounded"
                         name="price"
                         placeholder="Precio del Platillo"
                         onChange={e => getPriceSaucer(e.target.value)}
                     />
                 </div>
 
-                <legend className="text-center p-2 pt-2">Categoría</legend>
-                <div className="text-center py-2 shadow  pt-2 rounded">
+                <legend className="text-center p-2 pt-1">Categoría</legend>
+                <div className="text-center py-3  pt-2 shadow rounded">
                     <div className="form-check form-check-inline">
                         <input
                             className="form-check-input"
@@ -128,9 +128,9 @@ function AddProduct({history, getUpdateProducts}) {
                             Cortes
                         </label>
                     </div>
-                    <div className="form-check form-check-inline">
+                    <div className="form-check form-check-inline ">
                         <input
-                            className="form-check-input"
+                            className="form-check-input "
                             type="radio"
                             name="category"
                             value="ensalada"
@@ -142,7 +142,7 @@ function AddProduct({history, getUpdateProducts}) {
                     </div>
                 </div>
 
-                <input type="submit" className="mb-3 col-md-2 font-weight-bold text-uppercase mt-5 btn btn-success btn-block py-3" value="Agregar Producto" />
+                <input type="submit" className="mb-3 col-md-12 rounded font-weight-bold text-uppercase mt-5 btn btn-success btn-block py-3" value="Agregar Producto" />
             </form>
         </div> 
     )

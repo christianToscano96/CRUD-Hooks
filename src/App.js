@@ -52,9 +52,21 @@ function App() {
                             <AddProduct 
                              getUpdateProducts={getUpdateProducts}
                             />
-                         )}/>
+                   )}/>
                   <Route exact path="/products/:id" component={Product} />
-                  <Route exact path="/products/edit/:id" component={EditProduct} />
+                  <Route exact path="/products/edit/:id" 
+                         render={props =>{
+                           //tomar el id del producto
+                           const idProduct = parseInt(props.match.params.id);
+                           //el producto qe se pasa al state
+                           const product = products.filter(product => product.id === idProduct);
+                           
+                           return(
+                             <EditProduct
+                               product={product[0]}
+                             />
+                           )
+                   }} />
               </Switch>
             </main>
             <p className="mt-4 p2 text-center">Todos los Derechos Reservados</p>
