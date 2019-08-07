@@ -14,20 +14,24 @@ function App() {
   
   //state of products 
   const [ products, getProducts ] = useState([]);
+  const [ updateProducts, getUpdateProducts ] = useState(true);
 
   useEffect(() => {
-    
-    const consultApi = async () => {
-      //consultar la api de json-server
-      const result = await axios.get('http://localhost:4000/restaurant');
 
-      //lo guardamos en la lista
-      getProducts(result.data);
-     
-    }
+      //actualizar
+      if(updateProducts) { 
+        const consultApi = async () => {
+        //consultar la api de json-server
+        const result = await axios.get('http://localhost:4000/restaurant');
 
-    consultApi();
-  }, []);
+        //lo guardamos en la lista
+        getProducts(result.data); 
+      }
+      consultApi();
+      //cambiar a false la actualizacion de producto
+      getUpdateProducts(false);
+    }    
+  }, [updateProducts]);
 
 
   return (
@@ -43,7 +47,12 @@ function App() {
                             />
                          )}
                    />
-                  <Route exact path="/new-product" component={AddProduct} />
+                  <Route exact path="/new-product" 
+                         render={() => (
+                            <AddProduct 
+                             getUpdateProducts={getUpdateProducts}
+                            />
+                         )}/>
                   <Route exact path="/products/:id" component={Product} />
                   <Route exact path="/products/edit/:id" component={EditProduct} />
               </Switch>

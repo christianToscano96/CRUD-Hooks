@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import {withRouter} from 'react-router-dom';
 
 
-function AddProduct({history}) {
+function AddProduct({history, getUpdateProducts}) {
 
     //state 
     const [ nameSaucer, getNameSaucer ] = useState('');
@@ -55,6 +55,7 @@ function AddProduct({history}) {
         }
 
         //redirigir al usuario a productos
+        getUpdateProducts(true);
         history.push('/products');
     }
     return(

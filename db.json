@@ -47,6 +47,42 @@
       "priceSaucer": "100",
       "category": "postre",
       "id": 8
+    },
+    {
+      "nameSaucer": "Ensalada de pollo",
+      "priceSaucer": "120",
+      "category": "ensalada",
+      "id": 9
+    },
+    {
+      "nameSaucer": "Stella",
+      "priceSaucer": "170",
+      "category": "bebida",
+      "id": 10
+    },
+    {
+      "nameSaucer": "Bife ",
+      "priceSaucer": "150",
+      "category": "cortes",
+      "id": 11
+    },
+    {
+      "nameSaucer": "Stella 2lt",
+      "priceSaucer": "250",
+      "category": "bebida",
+      "id": 12
+    },
+    {
+      "nameSaucer": "Helado",
+      "priceSaucer": "30",
+      "category": "postre",
+      "id": 13
+    },
+    {
+      "nameSaucer": "Helado de CRema",
+      "priceSaucer": "60",
+      "category": "postre",
+      "id": 14
     }
   ]
 }
