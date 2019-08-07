@@ -23,6 +23,30 @@
       "priceSaucer": "222",
       "category": "cortes",
       "id": 4
+    },
+    {
+      "nameSaucer": "Pinta Negra",
+      "priceSaucer": "100",
+      "category": "bebida",
+      "id": 5
+    },
+    {
+      "nameSaucer": "Quilmes",
+      "priceSaucer": "55",
+      "category": "bebida",
+      "id": 6
+    },
+    {
+      "nameSaucer": "Pastel de Crema",
+      "priceSaucer": "80",
+      "category": "postre",
+      "id": 7
+    },
+    {
+      "nameSaucer": "Torta chocolate",
+      "priceSaucer": "100",
+      "category": "postre",
+      "id": 8
     }
   ]
 }

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Error from '../component/error/Error';
 import axios from 'axios';
+import Swal from 'sweetalert2';
+import {withRouter} from 'react-router-dom';
 
-function AddProduct() {
+
+function AddProduct({history}) {
 
     //state 
     const [ nameSaucer, getNameSaucer ] = useState('');
@@ -33,11 +36,26 @@ function AddProduct() {
                 priceSaucer,
                 category
             });
-            console.log(result);
+            
+            //al tenener un status 201 de enviado podemos mostrael el msj
+            if(result.status === 201) {
+                Swal.fire(
+                    'Producto Creado',
+                    'El producto se creo correctamente',
+                    'success'
+                  )
+            }
         } catch (error) {
             console.log(error);
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Hubo un Error, vuelve a intentarlo',
+              })
         }
 
+        //redirigir al usuario a productos
+        history.push('/products');
     }
     return(
         <div className="col-md-8 mx-auto">
@@ -129,4 +147,4 @@ function AddProduct() {
     )
 }
 
-export default AddProduct;
+export default withRouter(AddProduct);
