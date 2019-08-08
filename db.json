@@ -1,15 +1,15 @@
 {
   "restaurant": [
     {
-      "priceSaucer": "200",
       "nameSaucer": "Napolitana",
-      "category": "Postre",
+      "priceSaucer": "155",
+      "category": "cortes",
       "id": 1
     },
     {
-      "priceSaucer": "400",
       "nameSaucer": "Asado 2 platos",
-      "category": "Carnes",
+      "priceSaucer": "450",
+      "category": "cortes",
       "id": 2
     },
     {
@@ -79,7 +79,7 @@
       "id": 13
     },
     {
-      "nameSaucer": "Helado de CRema",
+      "nameSaucer": "Helado de Crema",
       "priceSaucer": "60",
       "category": "postre",
       "id": 14

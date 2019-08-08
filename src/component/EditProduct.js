@@ -1,8 +1,13 @@
 import React, {useState, useRef} from 'react';
 import Error from '../component/error/Error';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import {withRouter} from 'react-router-dom';
 
-function EditProduct({product}) {
+function EditProduct(props) {
 
+    //destructuring de props
+    const {history, product, getUpdateProducts} = props;
 
     //generar los refs
     const priceSaucerRef = useRef('');
@@ -12,8 +17,17 @@ function EditProduct({product}) {
      const [ category, getCategory ] = useState('');
 
 
-    const editProduct = e => {
+    const editProduct = async e => {
         e.preventDefault();
+        //validacion
+        const newNameSaucer = nameSaucerRef.current.value,
+              newPriceSaucer = priceSaucerRef.current.value;
+
+        if(newNameSaucer === '' || newPriceSaucer === '' || category === '' ){
+            getError(true);
+            return;
+        }
+         getError(false);
         //revisar si cambio la categoria de lo contrario asignar el mismo valor
         let categorySaucer = (category === '') ? product.category : category;
 
@@ -21,11 +35,35 @@ function EditProduct({product}) {
 
         //obtener los valores del formulario
         const editSaucer = {
-            nameSaucer : nameSaucerRef.current.value ,
-            priceSaucer : priceSaucerRef.current.value,
+            nameSaucer : newNameSaucer,
+            priceSaucer : newPriceSaucer,
             category :  categorySaucer          
         }
         //enviar el Request
+        const url=`http://localhost:4000/restaurant/${product.id}`;
+
+        try {
+            //metodo put para acualizar
+            const result = await axios.put(url, editSaucer);
+            //al tenener un status 200 de editado podemos mostrael el msj
+            if(result.status === 200) {
+                Swal.fire(
+                    'Producto Editado',
+                    'El producto se editó correctamente',
+                    'success'
+                )
+            }
+        } catch (error) {
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Hubo un Error, vuelve a intentarlo',
+              })
+        }
+
+        //redirigir al usuario
+        getUpdateProducts(true);
+        history.push('/products');
     }
 
     //para leer los radios
@@ -129,4 +167,4 @@ function EditProduct({product}) {
     )
 }
 
-export default EditProduct;
+export default withRouter(EditProduct);

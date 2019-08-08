@@ -64,6 +64,7 @@ function App() {
                            return(
                              <EditProduct
                                product={product[0]}
+                               getUpdateProducts={getUpdateProducts}
                              />
                            )
                    }} />
