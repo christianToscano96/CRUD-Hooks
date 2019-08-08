@@ -41,12 +41,6 @@
       "priceSaucer": "250",
       "category": "bebida",
       "id": 12
-    },
-    {
-      "nameSaucer": "Helado",
-      "priceSaucer": "30",
-      "category": "postre",
-      "id": 13
     }
   ]
 }
