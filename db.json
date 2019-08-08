@@ -1,40 +1,16 @@
 {
   "restaurant": [
     {
-      "nameSaucer": "Napolitana",
-      "priceSaucer": "155",
-      "category": "cortes",
-      "id": 1
-    },
-    {
       "nameSaucer": "Asado 2 platos",
       "priceSaucer": "450",
       "category": "cortes",
       "id": 2
     },
     {
-      "nameSaucer": "asado",
-      "priceSaucer": "1222",
-      "category": "cortes",
-      "id": 3
-    },
-    {
-      "nameSaucer": "asado",
-      "priceSaucer": "222",
-      "category": "cortes",
-      "id": 4
-    },
-    {
       "nameSaucer": "Pinta Negra",
       "priceSaucer": "100",
       "category": "bebida",
       "id": 5
-    },
-    {
-      "nameSaucer": "Quilmes",
-      "priceSaucer": "55",
-      "category": "bebida",
-      "id": 6
     },
     {
       "nameSaucer": "Pastel de Crema",
@@ -61,12 +37,6 @@
       "id": 10
     },
     {
-      "nameSaucer": "Bife ",
-      "priceSaucer": "150",
-      "category": "cortes",
-      "id": 11
-    },
-    {
       "nameSaucer": "Stella 2lt",
       "priceSaucer": "250",
       "category": "bebida",
@@ -77,12 +47,6 @@
       "priceSaucer": "30",
       "category": "postre",
       "id": 13
-    },
-    {
-      "nameSaucer": "Helado de Crema",
-      "priceSaucer": "60",
-      "category": "postre",
-      "id": 14
     }
   ]
 }

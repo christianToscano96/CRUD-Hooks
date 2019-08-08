@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import ProductsList from './ProductsList';
 
-function Products({products}) {
+function Products({products, getUpdateProducts}) {
     return(
         <Fragment>
           <h1 className="text-center">Productos</h1>
@@ -12,6 +12,7 @@ function Products({products}) {
                 <ProductsList 
                     key={product.id}
                     product={product}
+                    getUpdateProducts={getUpdateProducts}
                 />
               ))}
           </ul>  

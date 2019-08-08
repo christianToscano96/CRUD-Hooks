@@ -43,7 +43,8 @@ function App() {
                   <Route exact path="/products" 
                          render={() => (
                             <Products
-                              products={products} 
+                              products={products}
+                              getUpdateProducts={getUpdateProducts} 
                             />
                          )}
                    />
